@@ -7,10 +7,10 @@
     "dev": "nodemon --config nodemon.json src/index.ts",
     "dev:debug": "nodemon --config nodemon.json --inspect-brk src/index.ts",
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
-    "build": "tsc -w",
+    "build": "tsc -p ./",
     "eslint:dump": "eslint --print-config ./.eslintrc.json",
     "start": "npm run dev && npm run eslint",
-    "start2": "npm run eslint && npm run build"
+    "start2": "npm run eslint && npm run build -- -w"
   },
   "author": "",
   "license": "ISC",
