@@ -10,7 +10,7 @@
     "build": "tsc -p ./",
     "eslint:dump": "eslint --print-config ./.eslintrc.json",
     "start": "npm run dev && npm run eslint",
-    "start2": "npm run eslint && npm run build -- -w"
+    "start1": "npm run eslint && npm run build -- -w"
   },
   "author": "",
   "license": "ISC",

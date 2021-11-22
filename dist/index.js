@@ -14,11 +14,11 @@ class myString extends String {
     }
 }
 const str = new myString('Hey ').repeatMy(5);
-// console.log(str)
+console.log(str);
 /////////////////////////////////myIndex\\\\\\\
 class myIndexOf extends String {
     indexOf(str, pos = 0) {
-        if (pos < 0 || typeof pos !== "number") {
+        if (pos < 0) {
             pos = 0;
         }
         if (pos > this.length) {
@@ -37,4 +37,7 @@ const index = new myIndexOf('poly12o3doly');
 // console.log(index.indexOf('123'))
 console.log(index.indexOf('o', 2));
 ////////////////myfilter //////////////////////////////
+// class myFilter extends Array {
+//   filter()
+// }
 //# sourceMappingURL=index.js.map

@@ -18,13 +18,13 @@ class myString extends String {
 }
 
 const str: string = new myString('Hey ').repeatMy(5)
-// console.log(str)
+console.log(str)
 
 
 /////////////////////////////////myIndex\\\\\\\
 class myIndexOf extends String {
   indexOf(str: string, pos: number = 0): number {
-    if(pos < 0 || typeof pos !== "number") {
+    if(pos < 0) {
       pos = 0
     }
     
@@ -48,7 +48,9 @@ const index: myIndexOf = new myIndexOf('poly12o3doly')
 console.log(index.indexOf('o', 2))
 
 ////////////////myfilter //////////////////////////////
-
+// class myFilter extends Array {
+//   filter()
+// }
 
 
 
