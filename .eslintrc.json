@@ -1,0 +1,21 @@
+{
+  "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2015": true
+  },
+  "extends": [
+      "eslint:recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaVersion": 6
+  },
+  "plugins": [
+      "@typescript-eslint"
+  ],
+  "rules": {
+      "semi": ["error", "never"],
+      "quotes": ["error", "single"]
+  }
+}
