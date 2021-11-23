@@ -9,8 +9,7 @@
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
     "build": "tsc -p ./",
     "eslint:dump": "eslint --print-config ./.eslintrc.json",
-    "start": "npm run dev && npm run eslint",
-    "start1": "npm run eslint && npm run build -- -w"
+    "start": "npm run eslint && npm run build -- -w"
   },
   "author": "",
   "license": "ISC",

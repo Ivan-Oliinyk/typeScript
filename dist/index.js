@@ -14,10 +14,11 @@ class myString extends String {
     }
 }
 const str = new myString('Hey ').repeatMy(5);
+console.log("==== MY REPEAT ====");
 console.log(str);
 /////////////////////////////////myIndex\\\\\\\
 class myIndexOf extends String {
-    indexOf(str, pos = 0) {
+    indexOf1(str, pos = 0) {
         if (pos < 0) {
             pos = 0;
         }
@@ -33,11 +34,81 @@ class myIndexOf extends String {
     }
 }
 const index = new myIndexOf('poly12o3doly');
-// console.log(index.indexOf('ly'))
-// console.log(index.indexOf('123'))
-console.log(index.indexOf('o', 2));
+console.log("==== MY INDEXOF ====");
+console.log(index.indexOf('ly'));
+console.log(index.indexOf('123'));
+console.log(index.indexOf1('o', 7));
+class MyArray extends Array {
+    constructor(params) {
+        super();
+        this.elements = params;
+    }
+    myFilter(cb, thisArg) {
+        let res = [];
+        for (let i = 0; i < this.elements.length; i++) {
+            if (cb.call(thisArg, this.elements[i], i, thisArg)) {
+                res.push(this.elements[i]);
+            }
+        }
+        return res;
+    }
+    myEvery(cb, thisArg) {
+        for (let i = 0; i < this.elements.length; i++) {
+            if (!cb.call(thisArg, this.elements[i], i, thisArg)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+console.log("==== MY FILTER ====");
+const arr = new MyArray([1, 2, 3, 4, 5, 6, 7]);
+console.log(arr.myFilter((el) => el % 2));
+const arrStr = new MyArray(['ss', 'sss', 'ssss', 'ffss']);
+console.log(arrStr.myFilter((el) => el.length >= 3));
+console.log("==== MY EVERY ====");
+console.log(arr.myEvery((el) => el % 2));
+console.log(arr.myEvery((el) => el > 0));
 ////////////////myfilter //////////////////////////////
-// class myFilter extends Array {
-//   filter()
+// class MyFilter<T> extends Array {
+//   filter1(cb: any, thisArg?: object): T[] {
+//     let res = []
+//     for(let i: number = 0; i < this.length; i++) {
+//       if(cb.call(void 0 || thisArg, this[i], i, this)) {
+//         res.push(this[i])
+//       }
+//     }
+//     return res
+//   }
 // }
+// const myFilter = new MyFilter(...[1, 2, 3, 4, 5, 6])
+// console.log(myFilter.filter1((el: number) => el % 2))
+// console.log(myFilter.filter1((el: number) => !(el % 2)))
+// const myFilter1 = new MyFilter(...['sdds', 'sdsd', 'asqq', 's', 'ss'])
+// console.log(myFilter1.filter1((el: string) => el % 2))
+// const myFilterStr: MyFilter = new MyFilter(...['asd', 's', 'gtrr', 'sdad'])
+// console.log(myFilterStr.filter1((el: string) => el.length > 1))
+// class MyArray<T> extends Array {
+//   filter(cb: object, thisArg?: object): T[] {
+//       const res: T[] = []
+//       for (let i=0; i<this.length; i++) {
+//           if (i < this.length) {
+//               if (cb.call(thisArg || void 0, this[i], i, this)) {
+//                   res.push(this[i])
+//               }
+//           }
+//       }
+//       return res
+//   }
+//   // every(cb: object, thisArg?: object): boolean {
+//   //   for (let i = 0; i < this.length; i += 1) {
+//   //     if (!cb.call(thisArg || null, this[i], i, this)) {
+//   //       return false
+//   //     }
+//   //   }
+//   //   return true
+//   // }
+// }
+// const arr = new MyArray('QWE', 'RTY', 'UIO')
+// console.log(arr.filter((item) => item === 'RTY'))
 //# sourceMappingURL=index.js.map
